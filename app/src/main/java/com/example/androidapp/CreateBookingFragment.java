@@ -9,9 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -25,18 +27,18 @@ public class CreateBookingFragment extends Fragment {
     int currentHour;
     int currentMinute;
     String amPm;
-
     Spinner chooseVenueSpinner;
+    Button addBookingButton;
 
     public CreateBookingFragment() {
         // Required empty public constructor
     }
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
     }
 
@@ -49,6 +51,8 @@ public class CreateBookingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_create_booking, container, false);
         chooseStartTime = view.findViewById(R.id.bookingStartTime);
         chooseEndTime = view.findViewById(R.id.bookingEndTime);
+        addBookingButton =view.findViewById(R.id.add_booking_btn);
+
 
         chooseVenueSpinner = view.findViewById(R.id.booking_venue_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -60,7 +64,6 @@ public class CreateBookingFragment extends Fragment {
         chooseVenueSpinner.setAdapter(adapter);
 
 
-
         chooseStartTime.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,12 +71,16 @@ public class CreateBookingFragment extends Fragment {
             }
         });
 
-        chooseEndTime.setOnClickListener(new View.OnClickListener() {
+        chooseEndTime.setOnClickListener(v -> showTimePicker(chooseEndTime));
+
+        addBookingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showTimePicker(chooseEndTime);
+                // Show a Toast message when the "Done" button is clicked
+                Toast.makeText(requireContext(), "Booking Added", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         return view;
     }
@@ -97,6 +104,8 @@ public class CreateBookingFragment extends Fragment {
 
         timePickerDialog.show();
     }}
+
+
 
 
 
