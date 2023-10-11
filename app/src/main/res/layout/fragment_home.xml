@@ -8,7 +8,6 @@
     tools:context=".HomeFragment">
 
 
-
     <TextView
         android:id="@+id/bookingsTitle"
         android:layout_width="wrap_content"
@@ -26,7 +25,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/createBookingRectangle"
-
         />
 
     <ImageView

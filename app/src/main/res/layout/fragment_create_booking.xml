@@ -10,10 +10,10 @@
 
     <TextView
         android:id="@+id/createBookingsTitle"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginBottom="9dp"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/oval_shape"
         android:gravity="center"
         android:text="@string/create_booking"
@@ -22,7 +22,7 @@
         android:textSize="28sp"
         app:layout_constraintBottom_toTopOf="@+id/createBookingRectangle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,8 +30,9 @@
         android:id="@+id/createBookingRectangle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:contentDescription="@null"
         android:src="@drawable/current_bookings_rectangle"
         app:layout_constraintBottom_toTopOf="@+id/add_booking_btn"
@@ -43,13 +44,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10sp"
+        android:padding="5sp"
         app:layout_constraintBottom_toBottomOf="@+id/createBookingRectangle"
         app:layout_constraintEnd_toEndOf="@+id/createBookingRectangle"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="@+id/createBookingRectangle"
         app:layout_constraintTop_toTopOf="@+id/createBookingRectangle"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.050000012">
 
         <TextView
             android:id="@+id/venueText"
@@ -98,6 +99,7 @@
                 android:id="@+id/bookingStartTime"
                 android:layout_width="125dp"
                 android:layout_height="60dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginBottom="20dp"
                 android:cursorVisible="false"
                 android:focusable="false"
@@ -153,19 +155,20 @@
 
     </LinearLayout>
 
+
     <Button
         android:id="@+id/add_booking_btn"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="273dp"
+        android:layout_marginBottom="32dp"
         android:backgroundTint="@color/booking_btn"
         android:text="@string/add_booking_btn"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createBookingRectangle" />
 

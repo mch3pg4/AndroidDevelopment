@@ -3,7 +3,6 @@ package com.example.androidapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +24,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
             View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        createBookingButton = (Button) view.findViewById(R.id.createABookingButton);
+        createBookingButton = view.findViewById(R.id.createABookingButton);
         createBookingButton.setOnClickListener(v -> {
 
             CreateBookingFragment createBookingFragment = new CreateBookingFragment();
@@ -33,14 +32,12 @@ public class HomeFragment extends Fragment {
 
     });
 
-        seeAllBookingsButton = (TextView) view.findViewById(R.id.see_all_text);
+        seeAllBookingsButton = view.findViewById(R.id.see_all_text);
         seeAllBookingsButton.setOnClickListener(v -> {
 
             ShowAllBookingsFragment showAllBookingsFragment = new ShowAllBookingsFragment();
             getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, showAllBookingsFragment).commit();
 
         });
-
-
         return view;
         }}
